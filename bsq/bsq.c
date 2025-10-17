@@ -6,22 +6,19 @@ typedef struct {
     int y, x, size;
 } square;
 
-int min3(int a, int b, int c)
-{
+int min3(int a, int b, int c) {
     if (a <= b && a <= c) return a;
     if (b <= a && b <= c) return b;
     return c;
 }
 
-int ft_strlen(char *str)
-{
+int ft_strlen(char *str) {
     int i = 0;
     while (str[i]) i++;
     return i;
 }
 
-int main(int ac, char **av)
-{
+int main(int ac, char **av) {
     FILE *f = ac > 1 ? fopen(av[1], "r") : stdin;
     if (!f)
         return (fprintf(stderr, "file error\n"), 1);
