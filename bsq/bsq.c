@@ -22,14 +22,12 @@ int main(int ac, char **av) {
 	FILE *f = ac > 1 ? fopen(av[1], "r") : stdin;
 	if (!f)
 		return (fprintf(stdout, "file error\n"), 1);
-
 	int height = 0, width = 0;
 	char empty = 0, obs = 0, full = 0;
 	if (fscanf(f, "%d %c %c %c\n", &height, &empty, &obs, &full) != 4)
 		return (fprintf(stdout, "map error\n"), 1);
 	if (empty == obs || empty == full || obs == full)
 		return (fprintf(stdout, "map error\n"), 1);
-
 	char **map = calloc(height, sizeof(char *));
 	if (!map)
 		return (fprintf(stdout, "malloc error\n"), 1);
@@ -48,11 +46,9 @@ int main(int ac, char **av) {
 		map[i] = line;
 	}
 	if (f != stdin) fclose(f);
-
 	int **data = calloc(height + 1, sizeof(int *));
 	for (int i = 0; i <= height; i++)
 		data[i] = calloc(width + 1, sizeof(int));
-
 	square sq = {0,0,0};
 	for (int i = 0; i < height; i++) {
 		for (int j = 0; j < width; j++) {

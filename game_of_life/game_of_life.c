@@ -5,7 +5,6 @@
 int main(int ac, char **av) {
 	if (ac != 4)
 		return (putchar('e'), 1);
-
 	int width = atoi(av[1]);
 	int height = atoi(av[2]);
 	int iterations = atoi(av[3]);
@@ -17,7 +16,6 @@ int main(int ac, char **av) {
 			}
 		}
 	}
-
 	int x = 1, y = 1, pen = 0;
 	char cmd;
 	while (read(0, &cmd, 1) > 0) {
