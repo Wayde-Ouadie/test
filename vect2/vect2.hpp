@@ -18,11 +18,11 @@ class vect2 {
 			return *this;
 		}
 
-		vect2& operator[](int i) {
+		int& operator[](int i) {
 			return (i == 0 ? x : y);
 		}
 
-		vect2 operator[](int i) const {
+		int operator[](int i) const {
 			return (i == 0 ? x : y);
 		}
 
@@ -81,7 +81,7 @@ class vect2 {
 			return vect2(x * num, y * num);
 		}
 
-		vect2 operator*(int num, const vect2& other) {
+		friend vect2 operator*(int num, const vect2& other) {
 			return vect2(other.x * num, other.y * num);
 		}
 
@@ -91,15 +91,15 @@ class vect2 {
 			return *this;
 		}
 
-		vect2 operator-() {
+		vect2 operator-() const {
 			return vect2(-x, -y);
 		}
 
-		bool operator==(const vect2& other) {
+		bool operator==(const vect2& other) const {
 			return (x == other.x && y == other.y);
 		}
 
-		bool operator!=(const vect2& other) {
+		bool operator!=(const vect2& other) const {
 			return (!(x == other.x && y == other.y));
 		}
 };
