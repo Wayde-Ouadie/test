@@ -100,6 +100,6 @@ class vect2 {
 		}
 
 		bool operator!=(const vect2& other) {
-			return (x == other.x && y == other.y);
+			return (!(x == other.x && y == other.y));
 		}
 };
