@@ -24,7 +24,7 @@ int main(int ac, char **av) {
 		return (fprintf(stdout, "file error\n"), 1);
 	int height = 0, width = 0;
 	char empty = 0, obs = 0, full = 0;
-	if (fscanf(f, "%d %c %c %c\n", &height, &empty, &obs, &full) != 4)
+	if (fscanf(f, "%d %c %c %c\n", &height, &empty, &obs, &full) != 4) // check if the map example or subject file args are seperated by spaces or not, if yes lease at is, if not seperated remove the spaces between the call in scanf "%d%c%c%c" .....
 		return (fprintf(stdout, "map error\n"), 1);
 	if (empty == obs || empty == full || obs == full)
 		return (fprintf(stdout, "map error\n"), 1);
