@@ -58,7 +58,7 @@ int main(int ac, char **av) {
 	}
 	for (int h = 1; h < height + 1; h++) {
 		for (int w = 1; w < width + 1; w++) {
-			putchar(arr[iterations % 2][w][h] ? '0' : ' ');
+			putchar(arr[iterations % 2][w][h] ? '0' : ' '); // check if subject require 0 (number zero) or O (uppercase o)
 		}
 		putchar('\n');
 	}
